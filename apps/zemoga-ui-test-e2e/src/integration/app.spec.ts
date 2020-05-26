@@ -1,13 +1,13 @@
-import { getGreeting } from '../support/app.po';
+import { getCandidates } from '../support/app.po';
 
-describe('zemoga-ui-test', () => {
+describe('zemoga-ui-test home', () => {
   beforeEach(() => cy.visit('/'));
 
-  it('should display welcome message', () => {
+  it('should display 4 candidates', () => {
     // Custom command example, see `../support/commands.ts` file
     cy.login('my-email@something.com', 'myPassword');
 
     // Function helper example, see `../support/app.po.ts` file
-    getGreeting().contains('Welcome to zemoga-ui-test!');
+    getCandidates().should((t) => expect(t.length).equal(4));
   });
 });

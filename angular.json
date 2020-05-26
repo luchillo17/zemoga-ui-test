@@ -10,7 +10,7 @@
       },
       "root": "apps/zemoga-ui-test",
       "sourceRoot": "apps/zemoga-ui-test/src",
-      "prefix": "zemoga-ui-test",
+      "prefix": "zut",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",

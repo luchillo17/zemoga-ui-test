@@ -1,1 +1,1 @@
-export const getGreeting = () => cy.get('h1');
+export const getCandidates = () => cy.get('zut-candidate-panel');

@@ -1,13 +1,13 @@
-import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Message } from '@zemoga-ui-test/api-interfaces';
+import { Component } from '@angular/core';
+import { EMPTY } from 'rxjs';
 
 @Component({
-  selector: 'zemoga-ui-test-root',
+  selector: 'zut-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
+  hello$ = EMPTY;
   constructor(private http: HttpClient) {}
 }

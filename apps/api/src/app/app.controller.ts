@@ -1,6 +1,5 @@
-import { Controller, Get } from '@nestjs/common';
-
-import { Message } from '@zemoga-ui-test/api-interfaces';
+import { Body, Controller, Get, Put } from '@nestjs/common';
+import { ApiVote, Candidate } from '@zemoga-ui-test/api-interfaces';
 
 import { AppService } from './app.service';
 
@@ -8,8 +7,13 @@ import { AppService } from './app.service';
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
-  @Get('hello')
-  getData(): Message {
-    return this.appService.getData();
+  @Get('candidates')
+  getCandidates(): Candidate[] {
+    return this.appService.getCandidates();
+  }
+
+  @Put('voteCandidate')
+  voteCandidate(@Body() apiVote: ApiVote) {
+    return this.voteCandidate(apiVote);
   }
 }

@@ -5,15 +5,30 @@
 
       <span class="toolbar-spacer"></span>
 
-      <a mat-button href="/past-trials" [routerLink]="'/past-trials'"
-        >Past Trials</a
+      <a
+        mat-button
+        id="past-trials-link"
+        href="/past-trials"
+        [routerLink]="'/past-trials'"
       >
-      <a mat-button href="/how-it-works" [routerLink]="'/how-it-works'"
-        >How It Works</a
+        Past Trials
+      </a>
+      <a
+        mat-button
+        id="how-it-works-link"
+        href="/how-it-works"
+        [routerLink]="'/how-it-works'"
       >
-      <a mat-button href="/login-sign-up" [routerLink]="'/login-sign-up'"
-        >Log In/Sign Up</a
+        How It Works
+      </a>
+      <a
+        mat-button
+        id="log-in-sign-up-link"
+        href="/log-in-sign-up"
+        [routerLink]="'/log-in-sign-up'"
       >
+        Log In/Sign Up
+      </a>
 
       <td-search-box
         placeholder="Search here"

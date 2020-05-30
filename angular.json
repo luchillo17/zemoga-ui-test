@@ -6,6 +6,12 @@
       "schematics": {
         "@nrwl/angular:component": {
           "style": "scss"
+        },
+        "@schematics/angular:component": {
+          "style": "scss"
+        },
+        "@schematics/angular:module": {
+          "style": "scss"
         }
       },
       "root": "apps/zemoga-ui-test",

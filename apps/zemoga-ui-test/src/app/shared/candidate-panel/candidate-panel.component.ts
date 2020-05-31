@@ -1,4 +1,10 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  Input,
+  OnInit,
+} from '@angular/core';
+import { Candidate } from '@zemoga-ui-test/api-interfaces';
 
 @Component({
   selector: 'zut-candidate-panel',
@@ -7,6 +13,8 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class CandidatePanelComponent implements OnInit {
+  @Input() candidateId: Candidate['id'];
+
   constructor() {}
 
   ngOnInit(): void {}

@@ -30,18 +30,46 @@
         Log In/Sign Up
       </a>
 
-      <td-search-box
-        placeholder="Search here"
-        [debounce]="500"
-        (searchDebounce)="searchTerm = $event"
-        (clear)="searchTerm = ''"
-      >
-      </td-search-box>
+      <button mat-icon-button>
+        <mat-icon>search</mat-icon>
+      </button>
     </mat-toolbar>
 
-    <div id="home-candidate-panel">panel</div>
+    <div id="home-candidate-panel">
+      <div id="home-candidate-card">
+        <div id="home-candidate-card-content">
+          <div>What's your opinion on</div>
 
-    <div id="home-closing-toolbar">toolbar</div>
+          <div class="title">Pope Francis?</div>
+
+          <p class="description">
+            He's talking tough on clergy sexual abuse, but is he just another
+            papal pervert protector? (thumbs down) or a true pedophile punishing
+            pontiff? (thumbs up)
+          </p>
+
+          <a mat-button href="">More information</a>
+
+          <div class="subtitle">What's Your Verdict?</div>
+        </div>
+
+        <div id="home-candidate-card-footer">
+          <button mat-flat-button color="primary">
+            <mat-icon>thumb_up</mat-icon>
+          </button>
+
+          <button mat-flat-button color="accent">
+            <mat-icon>thumb_down</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="home-closing-toolbar">
+      <div>CLOSING IN</div>
+
+      <div>22 days</div>
+    </div>
   </div>
 </div>
 

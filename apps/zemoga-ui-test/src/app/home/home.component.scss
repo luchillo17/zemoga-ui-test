@@ -11,6 +11,7 @@
   max-width: 1280px;
 
   position: relative;
+  font-size: min(1.5vw, 1280px * 0.015);
 
   background: url(/assets/imgs/pope-francis.png);
   background-size: cover;
@@ -35,7 +36,9 @@
 }
 
 #home-header {
+  height: auto;
   padding: 40px 125px;
+  overflow-x: auto;
   background: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.22) 66%,
@@ -44,5 +47,77 @@
 
   .toolbar-spacer {
     flex: 1;
+  }
+}
+
+#home-candidate-panel {
+  color: white;
+  font-weight: lighter;
+
+  display: grid;
+  overflow: hidden;
+  grid-template-columns: 50% 50%;
+
+  align-items: center;
+  align-content: center;
+  justify-items: center;
+  justify-content: center;
+
+  #home-candidate-card {
+    max-width: 70%;
+
+    #home-candidate-card-content {
+      padding: 1.8em;
+      background: #0000004d;
+      backdrop-filter: blur(12px);
+
+      .title {
+        font-size: 2em;
+        line-height: 1;
+        font-weight: normal;
+        padding: 0 0 0.8em;
+      }
+
+      .subtitle {
+        font-size: 1.2em;
+        line-height: 1;
+        font-weight: normal;
+        padding: 0.5em 0 0;
+      }
+    }
+
+    #home-candidate-card-footer button {
+      width: 50%;
+      color: white;
+      padding: 0.95em;
+      opacity: 80%;
+      border-radius: 0;
+
+      mat-icon {
+        width: 1em;
+        height: 1em;
+        font-size: 2.5em;
+      }
+    }
+  }
+}
+
+#home-closing-toolbar {
+  display: flex;
+
+  > * {
+    padding: 15px;
+
+    &:first-child {
+      width: 25%;
+      color: white;
+      text-align: right;
+      background: #00000033;
+    }
+    &:last-child {
+      width: 75%;
+      font-size: 2em;
+      background: #ffffff80;
+    }
   }
 }

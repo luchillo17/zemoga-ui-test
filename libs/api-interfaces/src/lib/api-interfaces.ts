@@ -6,6 +6,7 @@ export interface Candidate {
   description: string;
   upVotes: number;
   downVotes: number;
+  imgPath: string;
 }
 
 export interface ApiVote {

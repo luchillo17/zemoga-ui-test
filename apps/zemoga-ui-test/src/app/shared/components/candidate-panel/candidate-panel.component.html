@@ -1,0 +1,101 @@
+<img [src]="candidate.imgPath" />
+
+<div class="candidate-content">
+  <div class="candidate-title">
+    <button
+      mat-flat-button
+      *ngIf="candidate.upVotes > candidate.downVotes"
+      color="primary"
+    >
+      <mat-icon>
+        thumb_up
+      </mat-icon>
+    </button>
+    <button
+      mat-flat-button
+      *ngIf="candidate.upVotes < candidate.downVotes"
+      color="accent"
+    >
+      <mat-icon>
+        thumb_down
+      </mat-icon>
+    </button>
+    <button
+      mat-flat-button
+      *ngIf="candidate.upVotes === candidate.downVotes"
+      disabled
+    >
+      <mat-icon>
+        remove
+      </mat-icon>
+    </button>
+
+    <zut-svg-text
+      class="candidate-name"
+      [text]="candidate.name"
+      [wordWrapCharacters]="19"
+    ></zut-svg-text>
+  </div>
+
+  <div class="candidate-subtitle">
+    <zut-svg-text
+      [text]="getRelativeDate(candidate.dateProposed)"
+      [wordWrapCharacters]="13"
+    ></zut-svg-text>
+
+    <zut-svg-text
+      [text]="'in ' + candidate.area"
+      [wordWrapCharacters]="20"
+    ></zut-svg-text>
+  </div>
+
+  <zut-svg-text
+    class="candidate-description"
+    [text]="candidate.description"
+    [wordWrapCharacters]="60"
+  ></zut-svg-text>
+
+  <div class="candidate-vote-buttons">
+    <button
+      mat-flat-button
+      class="candidate-vote-up-button"
+      color="primary"
+      (click)="voteUp()"
+    >
+      <mat-icon>thumb_up</mat-icon>
+    </button>
+
+    <button
+      mat-flat-button
+      class="candidate-vote-down-button"
+      color="accent"
+      (click)="voteDown()"
+    >
+      <mat-icon>thumb_down</mat-icon>
+    </button>
+  </div>
+
+  <div class="candidate-metrics">
+    <div
+      class="thumbs-up-metric"
+      *ngIf="thumbsUpPercentage() > 0"
+      [style.width.%]="thumbsUpPercentage()"
+    >
+      <mat-icon *ngIf="thumbsUpPercentage() > 15">thumb_up</mat-icon>
+      <div>
+        {{ thumbsUpPercentage() > 30 ? thumbsUpWidth() : '' }}
+      </div>
+    </div>
+
+    <div
+      class="thumbs-down-metric"
+      *ngIf="thumbsDownPercentage() > 0"
+      [style.width.%]="thumbsDownPercentage()"
+    >
+      <mat-icon *ngIf="thumbsDownPercentage() > 15">thumb_down</mat-icon>
+      <div>
+        {{ thumbsDownPercentage() > 30 ? thumbsDownWidth() : '' }}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,7 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { Candidate } from '@zemoga-ui-test/api-interfaces';
+
+import { CandidatesService } from '../shared/services/candidates.service';
 
 @Component({
   selector: 'zut-home',
@@ -8,8 +11,15 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
   searchTerm = '';
+  candidates = this.candidatesService.candidates;
 
-  constructor() {}
+  constructor(private candidatesService: CandidatesService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.candidatesService.getCandidates();
+  }
+
+  trackById(candidate: Candidate) {
+    return candidate.id;
+  }
 }

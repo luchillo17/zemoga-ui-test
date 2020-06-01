@@ -7,11 +7,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { CovalentSearchModule } from '@covalent/core/search';
 
-import { CandidatePanelComponent } from './candidate-panel/candidate-panel.component';
+import { CandidatePanelComponent } from './components/candidate-panel/candidate-panel.component';
+import { SvgTextComponent } from './components/svg-text/svg-text.component';
 
 @NgModule({
-  declarations: [CandidatePanelComponent],
-  imports: [CommonModule, HttpClientModule, MatButtonModule],
+  declarations: [CandidatePanelComponent, SvgTextComponent],
+  imports: [CommonModule, MatIconModule, MatButtonModule],
   exports: [
     CandidatePanelComponent,
     CommonModule,
@@ -21,6 +22,7 @@ import { CandidatePanelComponent } from './candidate-panel/candidate-panel.compo
     MatCardModule,
     MatIconModule,
     MatToolbarModule,
+    SvgTextComponent,
   ],
 })
 export class SharedModule {}

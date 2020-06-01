@@ -1,4 +1,5 @@
 @import '~@angular/material/theming';
+@import '../../theme/breakpoints.scss';
 
 :host {
   --home-content-max-width: 1024px;
@@ -129,7 +130,7 @@
 
 // #region Content
 #home-content {
-  padding: 0 20px;
+  padding: 0 20px 20px;
   max-width: calc(var(--home-content-max-width) + 40px);
 
   #about-us-container {
@@ -166,8 +167,11 @@
   #votes-container #votes-candidates {
     display: grid;
     grid-gap: 40px;
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
+
+    @include for-tablet-landscape-up {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }
 // #endregion

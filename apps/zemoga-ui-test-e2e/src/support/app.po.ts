@@ -7,3 +7,6 @@ export const getHomeHeader = () => cy.get('#home-header');
 export const getHomeFooter = () => cy.get('#home-footer');
 
 export const getCandidates = () => cy.get('zut-candidate-panel');
+
+export const getFirstCandidate = () =>
+  cy.get('zut-candidate-panel:first-child');

@@ -98,13 +98,10 @@
     <h1 id="votes-title">Votes</h1>
 
     <div id="votes-candidates">
-      <zut-candidate-panel [candidateId]="1"></zut-candidate-panel>
-
-      <zut-candidate-panel [candidateId]="2"></zut-candidate-panel>
-
-      <zut-candidate-panel [candidateId]="3"></zut-candidate-panel>
-
-      <zut-candidate-panel [candidateId]="4"></zut-candidate-panel>
+      <zut-candidate-panel
+        *ngFor="let candidate of candidates | async; trackBy: trackById"
+        [candidate]="candidate"
+      ></zut-candidate-panel>
     </div>
   </div>
 </div>

@@ -12,8 +12,13 @@ export class AppController {
     return this.appService.getCandidates();
   }
 
+  @Get('resetVotes')
+  resetVotes(): Candidate[] {
+    return this.appService.resetVotes();
+  }
+
   @Put('voteCandidate')
   voteCandidate(@Body() apiVote: ApiVote) {
-    return this.voteCandidate(apiVote);
+    return this.appService.voteCandidate(apiVote);
   }
 }

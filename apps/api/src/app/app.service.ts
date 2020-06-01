@@ -14,6 +14,7 @@ let candidates: Candidate[] = [
     dateProposed: subMonths(new Date(), 1),
     upVotes: 0,
     downVotes: 0,
+    imgPath: '/assets/imgs/kanye_west.png',
   },
   {
     id: 2,
@@ -23,6 +24,7 @@ let candidates: Candidate[] = [
     dateProposed: subMonths(new Date(), 1),
     upVotes: 0,
     downVotes: 0,
+    imgPath: '/assets/imgs/mark_zuckerberg.png',
   },
   {
     id: 3,
@@ -33,6 +35,7 @@ let candidates: Candidate[] = [
     dateProposed: subMonths(new Date(), 1),
     upVotes: 0,
     downVotes: 0,
+    imgPath: '/assets/imgs/christina_fernández.png',
   },
   {
     id: 4,
@@ -43,12 +46,24 @@ let candidates: Candidate[] = [
     dateProposed: subMonths(new Date(), 1),
     upVotes: 0,
     downVotes: 0,
+    imgPath: '/assets/imgs/malala_yousafzai.png',
   },
 ];
 
 @Injectable()
 export class AppService {
   getCandidates(): Candidate[] {
+    return candidates;
+  }
+
+  resetVotes() {
+    candidates = produce(candidates, (candidatesDraft) => {
+      for (const candidate of candidatesDraft) {
+        candidate.upVotes = 0;
+        candidate.downVotes = 0;
+      }
+    });
+
     return candidates;
   }
 

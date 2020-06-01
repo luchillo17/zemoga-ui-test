@@ -2,83 +2,25 @@
 
 This project was generated using [Nx](https://nx.dev).
 
-<p align="center"><img src="https://raw.githubusercontent.com/nrwl/nx/master/nx-logo.png" width="450"></p>
+Key aspects of this project:
 
-🔎 **Nx is a set of Extensible Dev Tools for Monorepos.**
+- Uses Angular and Next.js as a Monorepo, meaning both projects live inside this one, API and UI.
+- You have to run the api manually wether you want to run the project, or the e2e tests.
+- It's setup in such a way that you need to use a reverse proxy (to avoid disabling CORS, you know, security stuff...), in development is taken care of, but in production it's up to the DevOps team, or the CI/CD config.
+- Jumped over the vote confirmation dialog, not enough time.
+- Weird advanced techniques were used in the second half of the app, the candidates panels, where svg texts and some math was used to try and keep it responsive, or keep the aspect ratio true to the design, not the best result but given the time constraints, it's decent.
+- Also the first part for Pope Francis, since there was no design for mobile, all effort on that section was put in the desktop resolution.
 
-## Quick Start & Documentation
+## How to run
 
-[Nx Documentation](https://nx.dev/angular)
+First install the deps with `npm i`, make sure to have installed the Angular CLI globally.
 
-[10-minute video showing all Nx features](https://nx.dev/angular/getting-started/what-is-nx)
+To run the project run these 2 commands in different terminal tabs or windows, preferably in that order:
 
-[Interactive Tutorial](https://nx.dev/angular/tutorial/01-create-application)
+- API command: ng serve api
+- UI command: npm start
 
-## Adding capabilities to your workspace
+To run the e2e with Cypress run these 2 in same order, the watch flag is only if you want to see the result of the tests in the browser, or if you're developing with BDD or TDD methodology:
 
-Nx supports many plugins which add capabilities for developing different types of applications and different tools.
-
-These capabilities include generating applications, libraries, etc as well as the devtools to test, and build projects as well.
-
-Below are some plugins which you can add to your workspace:
-
-- [Angular](https://angular.io)
-  - `ng add @nrwl/angular`
-- [React](https://reactjs.org)
-  - `ng add @nrwl/react`
-- Web (no framework frontends)
-  - `ng add @nrwl/web`
-- [Nest](https://nestjs.com)
-  - `ng add @nrwl/nest`
-- [Express](https://expressjs.com)
-  - `ng add @nrwl/express`
-- [Node](https://nodejs.org)
-  - `ng add @nrwl/node`
-
-## Generate an application
-
-Run `ng g @nrwl/angular:app my-app` to generate an application.
-
-> You can use any of the plugins above to generate applications as well.
-
-When using Nx, you can create multiple applications and libraries in the same workspace.
-
-## Generate a library
-
-Run `ng g @nrwl/angular:lib my-lib` to generate a library.
-
-> You can also use any of the plugins above to generate libraries as well.
-
-Libraries are sharable across libraries and applications. They can be imported from `@zemoga-ui-test/mylib`.
-
-## Development server
-
-Run `ng serve my-app` for a dev server. Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng g component my-component --project=my-app` to generate a new component.
-
-## Build
-
-Run `ng build my-app` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test my-app` to execute the unit tests via [Jest](https://jestjs.io).
-
-Run `nx affected:test` to execute the unit tests affected by a change.
-
-## Running end-to-end tests
-
-Run `ng e2e my-app` to execute the end-to-end tests via [Cypress](https://www.cypress.io).
-
-Run `nx affected:e2e` to execute the end-to-end tests affected by a change.
-
-## Understand your workspace
-
-Run `nx dep-graph` to see a diagram of the dependencies of your projects.
-
-## Further help
-
-Visit the [Nx Documentation](https://nx.dev/angular) to learn more.
+- API command: ng serve api
+- E2E command: ng run zemoga-ui-test-e2e:e2e --watch
